@@ -1,8 +1,12 @@
-import Banner3D from './components/Banner3D'
-import './components/Banner3D.css'
+import "./App.css"
+import Landing from "./components/Landing"
 
-function App() {
-  return <Banner3D />
+const App = () => {
+  return (
+    <>
+      <Landing />
+    </>
+  )
 }
 
 export default App

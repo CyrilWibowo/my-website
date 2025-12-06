@@ -1,3 +1,48 @@
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 10vh;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1000;
+}
+
+.dot {
+  color: white;
+  font-size: 1rem;
+}
+
+.dot.active {
+  font-size: 0.8rem;
+}
+
 /* Main container */
 .Landing {
   display: flex;

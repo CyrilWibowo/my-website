@@ -16,13 +16,18 @@
 }
 
 .nav-link {
-  color: white;
+  color: grey;
   font-family: sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link.active {
+  color: white;
 }
 
 .nav-link::after {

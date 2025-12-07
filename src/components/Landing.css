@@ -1,90 +1,35 @@
-/* Navigation */
-.nav {
-  position: fixed;
-  top: 10vh;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  z-index: 1000;
-}
-
-.nav-link {
-  color: white;
-  font-family: sans-serif;
-  font-size: 0.9rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.nav-link.active {
-  text-decoration: underline;
-}
-
-/* Scroll indicator */
-.scroll-indicator {
-  position: fixed;
-  bottom: 10vh;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 1.5rem;
-  z-index: 1000;
-}
-
-.dot {
-  color: white;
-  font-size: 1rem;
-}
-
-.dot.active {
-  font-size: 0.8rem;
-}
-
-/* Main container */
-.Landing {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+/* Page container - holds all sections */
+.page-container {
+  height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
-/* Crosshair */
-.crosshair {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-.crosshair::before,
-.crosshair::after {
-  content: '';
-  position: absolute;
-  background-color: white;
-}
-
-.crosshair::before {
-  top: 50%;
-  left: 0;
+/* Each page section */
+.page-section {
+  height: 100vh;
   width: 100%;
-  height: 2px;
-  transform: translateY(-50%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-.crosshair::after {
-  top: 0;
-  left: 50%;
-  width: 2px;
+/* Section content wrapper for animations */
+.section-content {
+  width: 100%;
   height: 100%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  will-change: transform;
+}
+
+.page-section h1 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 3rem;
 }
 
 /* Image track container */
@@ -135,6 +80,14 @@
 /* Card styles */
 .card {
   background-color: gray;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .card > img {
@@ -146,6 +99,11 @@
   -moz-user-select: none;
   -ms-user-select: none;
   pointer-events: none;
+  transition: transform 0.4s ease;
+}
+
+.card:hover > img {
+  transform: scale(1.02);
 }
 
 .card-1 {
@@ -193,5 +151,79 @@
   height: calc(30vh - 2vmin);
 }
 
+/* Crosshair */
+.crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
 
+.crosshair.visible {
+  opacity: 1;
+}
+
+.crosshair::before,
+.crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+}
+
+.crosshair::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.crosshair::after {
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1.5rem;
+  z-index: 100;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.scroll-indicator.visible {
+  opacity: 1;
+}
+
+.dot {
+  color: white;
+  font-size: 1rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.dot.active {
+}
 

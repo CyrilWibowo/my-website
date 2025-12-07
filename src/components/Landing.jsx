@@ -15,6 +15,7 @@ import emailLogo from "../assets/email-logo.webp"
 import facebookLogo from "../assets/facebook-logo.png"
 import instagramLogo from "../assets/instagram-logo.png"
 import juraganTempeLogo from "../assets/juragan-tempe-logo.png"
+import aboutUsImage from "../assets/about-us-image.webp"
 
 const sections = ["home", "about", "contact"]
 
@@ -191,6 +192,38 @@ const Landing = () => {
       {/* About Section */}
       <section className="page-section" id="about" style={getSectionStyle(1)}>
         <div className="section-content">
+          <div className="about-image-container">
+            <img src={aboutUsImage} alt="About Us" className="about-us-image" />
+          </div>
+          <div className="about-us-container">
+            <img src={juraganTempeLogo} alt="Juragan Tempe Logo" className="juragan-tempe-logo" />
+            <div className="about-us">
+              We are a Perth-based Australian company dedicated to providing premium, locally-made
+              tempeh using exclusively Australian <span className="non-gmo">non-GMO</span> soybeans.
+              Our mission is to bring the exceptional nutritional benefits of <span className="tempeh">Tempeh</span> and
+              share this superfood with Australia.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="page-section" id="contact" style={getSectionStyle(2)}>
+        <div className="section-content">
+          <div className="contact-form">
+            <form>
+              <div className="form-group">
+                <input type="text" id="name" name="name" placeholder="Your name" />
+              </div>
+              <div className="form-group">
+                <input type="email" id="email" name="email" placeholder="Your email" />
+              </div>
+              <div className="form-group">
+                <textarea id="message" name="message" placeholder="Your message" rows="5"></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
           <div className="stockists">
             <div className="stockist-about">Available at 17 Perth Locations:</div>
             <div className="stockist-columns">
@@ -224,36 +257,13 @@ const Landing = () => {
               </div>
             </div>
           </div>
-          <div className="about-us-container">
-            <img src={juraganTempeLogo} alt="Juragan Tempe Logo" className="juragan-tempe-logo" />
-            <div className="about-us">
-              We are a Perth-based Australian company dedicated to providing premium, locally-made
-              tempeh using exclusively Australian <span className="non-gmo">non-GMO</span> soybeans.
-              Our mission is to bring the exceptional nutritional benefits of <span className="tempeh">Tempeh</span> and
-              share this superfood with Australia.
-            </div>
-          </div>
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="page-section" id="contact" style={getSectionStyle(2)}>
-        <div className="section-content">
-          <div className="contact-form">
-            <form>
-              <div className="form-group">
-                <input type="text" id="name" name="name" placeholder="Your name" />
-              </div>
-              <div className="form-group">
-                <input type="email" id="email" name="email" placeholder="Your email" />
-              </div>
-              <div className="form-group">
-                <textarea id="message" name="message" placeholder="Your message" rows="5"></textarea>
-              </div>
-              <button type="submit">Send Message</button>
-            </form>
+        <footer className="footer">
+          <div className="footer-left">
+            <div className="footer-company">Tiara Khatulistiwa Pty Ltd</div>
+            <div className="footer-location">Western Australia</div>
           </div>
-          <div className="socials">
+          <div className="footer-right">
             <div className="social-item">
               <img src={phoneLogo} alt="Phone" className="social-logo" />
               <span>+61 415 101 151</span>
@@ -271,7 +281,7 @@ const Landing = () => {
               <span>@juragantempeaustralia</span>
             </a>
           </div>
-        </div>
+        </footer>
       </section>
     </div>
   )

@@ -10,6 +10,10 @@ import image6 from "../assets/image-6.jpg"
 import image7 from "../assets/image-7.jpg"
 import image8 from "../assets/image-8.jpg"
 import image9 from "../assets/image-9.jpg"
+import phoneLogo from "../assets/phone-logo.png"
+import emailLogo from "../assets/email-logo.webp"
+import facebookLogo from "../assets/facebook-logo.png"
+import instagramLogo from "../assets/instagram-logo.png"
 
 const sections = ["home", "about", "contact"]
 
@@ -218,8 +222,8 @@ const Landing = () => {
           </div>
           <div className="about-us">
             We are a Perth-based Australian company dedicated to crafting premium, locally-made
-            tempeh using exclusively Australian non-GMO soybeans. Our mission is to bring the
-            exceptional nutritional benefits of <span className="tempeh">Tempeh</span> to
+            tempeh using exclusively Australian <span className="non-gmo">non-GMO</span> soybeans.
+            Our mission is to bring the exceptional nutritional benefits of <span className="tempeh">Tempeh</span> to
             Australian tables and share this superfood with the world.
           </div>
         </div>
@@ -228,7 +232,38 @@ const Landing = () => {
       {/* Contact Section */}
       <section className="page-section" id="contact" style={getSectionStyle(2)}>
         <div className="section-content">
-          <h1>Contact</h1>
+          <div className="contact-form">
+            <form>
+              <div className="form-group">
+                <input type="text" id="name" name="name" placeholder="Your name" />
+              </div>
+              <div className="form-group">
+                <input type="email" id="email" name="email" placeholder="Your email" />
+              </div>
+              <div className="form-group">
+                <textarea id="message" name="message" placeholder="Your message" rows="5"></textarea>
+              </div>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+          <div className="socials">
+            <div className="social-item">
+              <img src={phoneLogo} alt="Phone" className="social-logo" />
+              <span>+61 415 101 151</span>
+            </div>
+            <div className="social-item">
+              <img src={emailLogo} alt="Email" className="social-logo" />
+              <span>info@tiarafood.com.au</span>
+            </div>
+            <div className="social-item">
+              <img src={facebookLogo} alt="Facebook" className="social-logo" />
+              <span>@juragantempeaustralia</span>
+            </div>
+            <div className="social-item">
+              <img src={instagramLogo} alt="Instagram" className="social-logo" />
+              <span>@juragantempeaustralia</span>
+            </div>
+          </div>
         </div>
       </section>
     </div>
